@@ -35,7 +35,7 @@ fun App(){
     NavHost(navController = navController, startDestination = "registration"){  // start destination should be mentioned based on below mentioned nodes
         composable(route="registration"){    //defining nodes for particular screens
             RegistrationScreen {
-                navController.navigate("main/${it}")
+                navController.navigate("main/${it}") // simply it shows what to do when button is clicked and it represents args
             }
         }
         composable(route="login"){
@@ -54,7 +54,7 @@ fun App(){
 }
 
 @Composable
-fun RegistrationScreen(onClick:(email:String)->Unit){
+fun RegistrationScreen(onClick:(email:String)->Unit){  // onClick is a function which return unit type that simply means void
     Text(text = "Registration Screen",
         style = MaterialTheme.typography.headlineMedium,
         modifier = Modifier.clickable {
